@@ -1,0 +1,498 @@
+/* ========================================
+   PRIMEBASKET CATEGORY SECTION
+======================================== */
+
+.category-section {
+  width: 100%;
+
+  padding: 90px 6%;
+
+  background: #ffffff;
+}
+
+
+/* ========================================
+   CATEGORY HEADER
+======================================== */
+
+.category-header {
+  max-width: 720px;
+
+  margin: 0 auto 55px;
+
+  text-align: center;
+}
+
+
+.category-label {
+  display: inline-block;
+
+  margin-bottom: 14px;
+
+  color: #b8941f;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+
+.category-header h2 {
+  margin: 0;
+
+  color: #0c2b20;
+
+  font-family: Georgia, serif;
+
+  font-size: clamp(34px, 4vw, 52px);
+
+  line-height: 1.1;
+
+  font-weight: 700;
+}
+
+
+.category-header h2 span {
+  color: #b8941f;
+}
+
+
+.category-header p {
+  max-width: 620px;
+
+  margin: 20px auto 0;
+
+  color: #777777;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+
+/* ========================================
+   CATEGORY GRID
+======================================== */
+
+.category-grid {
+  width: min(92%, 1400px);
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 20px;
+}
+
+
+/* ========================================
+   CATEGORY CARD
+======================================== */
+
+.category-card {
+  position: relative;
+
+  min-height: 145px;
+
+  padding: 25px 22px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 16px;
+
+  overflow: hidden;
+
+  border: 1px solid #eeeeee;
+
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  color: #0c2b20;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+
+.category-card:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(212, 175, 55, 0.5);
+
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.09);
+}
+
+
+/* ========================================
+   CATEGORY ICON
+======================================== */
+
+.category-icon {
+  flex-shrink: 0;
+
+  width: 58px;
+
+  height: 58px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #f4f0df;
+
+  color: #0c2b20;
+
+  font-size: 23px;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.category-card:hover .category-icon {
+  background: #0c2b20;
+
+  color: #d4af37;
+
+  transform: scale(1.08);
+}
+
+
+/* ========================================
+   CATEGORY INFORMATION
+======================================== */
+
+.category-info {
+  min-width: 0;
+}
+
+
+.category-info h3 {
+  margin: 0 0 7px;
+
+  color: #0c2b20;
+
+  font-size: 15px;
+
+  font-weight: 700;
+}
+
+
+.category-info p {
+  margin: 0;
+
+  color: #888888;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+
+/* ========================================
+   CATEGORY ARROW
+======================================== */
+
+.category-arrow {
+  position: absolute;
+
+  right: 18px;
+
+  bottom: 15px;
+
+  color: #b8941f;
+
+  font-size: 18px;
+
+  opacity: 0;
+
+  transform: translateX(-5px);
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.category-card:hover .category-arrow {
+  opacity: 1;
+
+  transform: translateX(0);
+}
+
+
+/* ========================================
+   VIEW ALL
+======================================== */
+
+.category-footer {
+  margin-top: 45px;
+
+  display: flex;
+
+  justify-content: center;
+}
+
+
+.category-view-all {
+  min-height: 48px;
+
+  padding: 0 24px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  border: 1px solid #0c2b20;
+
+  border-radius: 6px;
+
+  background: #0c2b20;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.category-view-all span {
+  color: #d4af37;
+
+  font-size: 17px;
+}
+
+
+.category-view-all:hover {
+  background: #164a37;
+
+  transform: translateY(-3px);
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1100px) {
+
+  .category-grid {
+    grid-template-columns:
+      repeat(3, 1fr);
+  }
+
+}
+
+
+/* ========================================
+   SMALL TABLET
+======================================== */
+
+@media (max-width: 800px) {
+
+  .category-section {
+    padding: 70px 5%;
+  }
+
+
+  .category-grid {
+    width: 100%;
+
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap: 16px;
+  }
+
+
+  .category-card {
+    min-height: 135px;
+
+    padding: 20px 18px;
+  }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+  .category-section {
+    padding: 60px 5%;
+  }
+
+
+  .category-header {
+    margin-bottom: 35px;
+  }
+
+
+  .category-label {
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+  }
+
+
+  .category-header h2 {
+    font-size: 32px;
+  }
+
+
+  .category-header p {
+    font-size: 13px;
+
+    line-height: 1.7;
+  }
+
+
+  .category-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap: 12px;
+  }
+
+
+  .category-card {
+    min-height: 135px;
+
+    padding: 18px 14px;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    justify-content: center;
+
+    gap: 12px;
+  }
+
+
+  .category-icon {
+    width: 45px;
+
+    height: 45px;
+
+    font-size: 18px;
+  }
+
+
+  .category-info h3 {
+    font-size: 13px;
+
+    margin-bottom: 4px;
+  }
+
+
+  .category-info p {
+    font-size: 10px;
+  }
+
+
+  .category-arrow {
+    right: 10px;
+
+    bottom: 8px;
+
+    font-size: 15px;
+  }
+
+
+  .category-footer {
+    margin-top: 30px;
+  }
+
+
+  .category-view-all {
+    width: 100%;
+  }
+
+}
+
+
+/* ========================================
+   SMALL PHONES
+======================================== */
+
+@media (max-width: 400px) {
+
+  .category-section {
+    padding: 50px 4%;
+  }
+
+
+  .category-header h2 {
+    font-size: 28px;
+  }
+
+
+  .category-header p {
+    font-size: 12px;
+  }
+
+
+  .category-grid {
+    gap: 10px;
+  }
+
+
+  .category-card {
+    min-height: 125px;
+
+    padding: 15px 12px;
+  }
+
+
+  .category-icon {
+    width: 40px;
+
+    height: 40px;
+
+    font-size: 16px;
+  }
+
+
+  .category-info h3 {
+    font-size: 12px;
+  }
+
+
+  .category-info p {
+    font-size: 9px;
+  }
+
+}

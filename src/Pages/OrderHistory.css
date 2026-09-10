@@ -1,0 +1,491 @@
+/* ========================================
+   ORDER HISTORY PAGE
+======================================== */
+
+.order-history-page {
+  min-height: 100vh;
+
+  padding: 40px 6%;
+
+  background: #f7f6f1;
+}
+
+.order-history-container {
+  max-width: 1100px;
+
+  margin: 0 auto;
+}
+
+
+/* ========================================
+   BACK BUTTON
+======================================== */
+
+.order-history-back {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 25px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #063f31;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.order-history-back:hover {
+  color: #c29b21;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.order-history-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 30px;
+
+  padding: 35px;
+
+  border-radius: 15px;
+
+  background: #063f31;
+
+  color: white;
+
+  box-shadow:
+    0 8px 25px rgba(6, 63, 49, 0.12);
+}
+
+.order-history-header span {
+  color: #f5c542;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.order-history-header h1 {
+  margin: 8px 0;
+
+  color: white;
+
+  font-size: 34px;
+}
+
+.order-history-header p {
+  margin: 0;
+
+  color: #d7ddd9;
+
+  font-size: 14px;
+}
+
+.history-header-icon {
+  font-size: 65px;
+
+  color: #f5c542;
+
+  opacity: 0.9;
+}
+
+
+/* ========================================
+   ORDERS LIST
+======================================== */
+
+.orders-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+
+/* ========================================
+   ORDER CARD
+======================================== */
+
+.order-history-card {
+  background: white;
+
+  padding: 25px;
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 5px 20px rgba(0, 0, 0, 0.06);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.order-history-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ========================================
+   ORDER TOP
+======================================== */
+
+.order-card-top {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding-bottom: 18px;
+
+  border-bottom: 1px solid #eeeeee;
+}
+
+.order-card-top > div {
+  min-width: 0;
+}
+
+.order-card-top span:first-child {
+  color: #888;
+
+  font-size: 12px;
+}
+
+.order-card-top h2 {
+  margin: 5px 0 0;
+
+  color: #063f31;
+
+  font-size: 19px;
+}
+
+
+/* ========================================
+   ORDER STATUS
+======================================== */
+
+.order-status {
+  padding: 7px 13px;
+
+  border-radius: 20px;
+
+  background: #e9f8ef;
+
+  color: #159447;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+
+/* ========================================
+   ORDER DETAILS
+======================================== */
+
+.order-card-details {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 20px;
+
+  padding: 22px 0;
+}
+
+.order-card-details div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 6px;
+
+  min-width: 0;
+}
+
+.order-card-details span {
+  color: #888;
+
+  font-size: 12px;
+}
+
+.order-card-details strong {
+  color: #063f31;
+
+  font-size: 14px;
+
+  overflow-wrap: anywhere;
+}
+
+
+/* ========================================
+   ORDER BOTTOM
+======================================== */
+
+.order-card-bottom {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding-top: 18px;
+
+  border-top: 1px solid #eeeeee;
+}
+
+
+/* ========================================
+   DATE
+======================================== */
+
+.order-date {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: #777;
+
+  font-size: 13px;
+}
+
+.order-date svg {
+  color: #063f31;
+}
+
+
+/* ========================================
+   TRACK BUTTON
+======================================== */
+
+.order-card-bottom button {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 11px 17px;
+
+  border: none;
+
+  border-radius: 7px;
+
+  background: #063f31;
+
+  color: white;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.order-card-bottom button:hover {
+  background: #095541;
+
+  transform: translateY(-1px);
+}
+
+
+/* ========================================
+   EMPTY ORDERS
+======================================== */
+
+.orders-empty {
+  padding: 70px 30px;
+
+  background: white;
+
+  border-radius: 15px;
+
+  text-align: center;
+
+  box-shadow:
+    0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.orders-empty > svg {
+  color: #063f31;
+
+  font-size: 55px;
+}
+
+.orders-empty h2 {
+  margin: 20px 0 8px;
+
+  color: #063f31;
+
+  font-size: 24px;
+}
+
+.orders-empty p {
+  margin: 0 0 25px;
+
+  color: #777;
+
+  font-size: 14px;
+}
+
+.orders-empty button {
+  padding: 12px 22px;
+
+  border: none;
+
+  border-radius: 7px;
+
+  background: #f5c542;
+
+  color: #063f31;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.orders-empty button:hover {
+  background: #e5b52f;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 800px) {
+
+  .order-history-page {
+    padding: 30px 5%;
+  }
+
+  .order-card-details {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+  .order-history-page {
+    padding: 25px 15px;
+  }
+
+  .order-history-header {
+    padding: 25px;
+
+    border-radius: 12px;
+  }
+
+  .order-history-header h1 {
+    font-size: 28px;
+  }
+
+  .history-header-icon {
+    font-size: 45px;
+  }
+
+  .order-history-card {
+    padding: 20px;
+  }
+
+  .order-card-top {
+    align-items: flex-start;
+  }
+
+  .order-card-details {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+  }
+
+  .order-card-bottom {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .order-card-bottom button {
+    width: 100%;
+  }
+
+}
+
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 400px) {
+
+  .order-history-header {
+    padding: 20px;
+  }
+
+  .history-header-icon {
+    display: none;
+  }
+
+  .order-history-header h1 {
+    font-size: 25px;
+  }
+
+  .order-card-top {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 10px;
+  }
+
+  .order-status {
+    font-size: 11px;
+  }
+
+}

@@ -1,0 +1,219 @@
+import { FaShoppingCart, FaHeart, FaStar } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+
+import { useCart } from "../Context/CartContext";
+import { useWishlist } from "../Context/WishlistContext";
+import { toast } from "react-toastify";
+
+import "./ProductCard.css";
+
+
+const ProductCard = ({ product }) => {
+
+  const { addToCart } = useCart();
+
+  const {
+    addToWishlist,
+    removeFromWishlist,
+    isInWishlist,
+  } = useWishlist();
+
+  const navigate = useNavigate();
+
+
+  // ========================================
+  // PRODUCT DETAILS
+
+
+  const handleProductClick = () => {
+
+    navigate("/products/" + product.id);
+
+  };
+
+
+  // ========================================
+  // ADD TO CART
+  // ========================================
+
+  const handleAddToCart = (e) => {
+
+    e.stopPropagation();
+
+    addToCart(product);
+
+    toast.success(`${product.name} added to cart!`);
+
+  };
+
+
+  // ========================================
+  // WISHLIST
+  // ========================================
+
+  const handleWishlist = (e) => {
+
+    e.stopPropagation();
+
+    if (isInWishlist(product.id)) {
+
+      removeFromWishlist(product.id);
+
+      toast.info(
+        `${product.name} removed from wishlist`
+      );
+
+    } else {
+
+      addToWishlist(product);
+
+      toast.success(
+        `${product.name} added to wishlist ❤️`
+      );
+
+    }
+
+  };
+
+
+  return (
+
+    <article
+      className="product-card"
+      onClick={handleProductClick}
+    >
+
+
+      {/* ========================================
+          IMAGE SECTION
+      ======================================== */}
+
+      <div className="product-image">
+
+        <img
+          src={product.image}
+          alt={product.name}
+        />
+
+
+        {/* WISHLIST */}
+
+        <button
+          type="button"
+          className={`wishlist-button ${
+            isInWishlist(product.id)
+              ? "wishlist-active"
+              : ""
+          }`}
+          onClick={handleWishlist}
+          aria-label={
+            isInWishlist(product.id)
+              ? "Remove from wishlist"
+              : "Add to wishlist"
+          }
+        >
+
+          <FaHeart />
+
+        </button>
+
+
+        {/* CATEGORY BADGE */}
+
+        <span className="image-category">
+          {product.category}
+        </span>
+
+      </div>
+
+
+
+      {/* ========================================
+          PRODUCT INFORMATION
+      ======================================== */}
+
+      <div className="product-info">
+
+
+        {/* RATING */}
+
+        <div className="product-rating">
+
+          <FaStar />
+
+          <span>
+            {product.rating}
+          </span>
+
+          <span className="rating-text">
+            Excellent
+          </span>
+
+        </div>
+
+
+        {/* PRODUCT NAME */}
+
+        <h3>
+          {product.name}
+        </h3>
+
+
+        {/* DESCRIPTION */}
+
+        <p className="product-description">
+          {product.description}
+        </p>
+
+
+        {/* ========================================
+            BOTTOM
+        ======================================== */}
+
+        <div className="product-bottom">
+
+
+          {/* PRICE */}
+
+          <div className="price-section">
+
+            <span className="price-label">
+              Price
+            </span>
+
+            <span className="product-price">
+              ₦{product.price.toLocaleString()}
+            </span>
+
+          </div>
+
+
+          {/* ADD TO CART */}
+
+          <button
+            type="button"
+            className="add-to-cart"
+            onClick={handleAddToCart}
+          >
+
+            <FaShoppingCart />
+
+            <span>
+              Add
+            </span>
+
+          </button>
+
+        </div>
+
+
+      </div>
+
+    </article>
+
+  );
+
+};
+
+
+export default ProductCard;

@@ -1,0 +1,973 @@
+/* ========================================
+   PRIMEBASKET NAVBAR
+======================================== */
+
+.navbar {
+  width: 100%;
+  height: 80px;
+
+  background: #0c2b20;
+
+  border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+
+  position: relative;
+
+  z-index: 1000;
+}
+
+
+/* ========================================
+   NAVBAR CONTAINER
+======================================== */
+
+.navbar-container {
+  width: 92%;
+  max-width: 1400px;
+
+  height: 100%;
+
+  margin: 0 auto;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 24px;
+}
+
+
+/* ========================================
+   LOGO
+======================================== */
+
+.logo {
+  display: flex;
+
+  align-items: center;
+
+  text-decoration: none;
+
+  flex-shrink: 0;
+
+  min-width: 0;
+
+  height: 100%;
+}
+
+.logo img {
+  display: block;
+
+  width: 220px;
+
+  max-width: 100%;
+
+  height: auto;
+
+  max-height: 65px;
+
+  object-fit: contain;
+
+  transition: transform 0.3s ease;
+}
+
+.logo:hover img {
+  transform: scale(1.02);
+}
+
+
+/* ========================================
+   DESKTOP NAVIGATION LINKS
+======================================== */
+
+.nav-links {
+  display: flex;
+
+  align-items: center;
+
+  gap: 28px;
+
+  flex-shrink: 0;
+}
+
+.nav-links a {
+  position: relative;
+
+  color: rgba(255, 255, 255, 0.9);
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  white-space: nowrap;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #d4af37;
+
+  transform: translateY(-1px);
+}
+
+
+/* ========================================
+   GOLD UNDERLINE
+======================================== */
+
+.nav-links a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  bottom: -8px;
+
+  width: 0;
+
+  height: 2px;
+
+  background: #d4af37;
+
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+
+/* ========================================
+   DESKTOP SEARCH
+======================================== */
+
+.nav-search {
+  flex: 1;
+
+  width: 100%;
+
+  max-width: 360px;
+
+  min-width: 160px;
+
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+
+  background: #ffffff;
+
+  border-radius: 7px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(212, 175, 55, 0.2);
+
+  transition:
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.nav-search:focus-within {
+  border-color: #d4af37;
+
+  box-shadow:
+    0 0 0 3px rgba(212, 175, 55, 0.12);
+}
+
+
+/* ========================================
+   SEARCH INPUT
+======================================== */
+
+.nav-search input {
+  flex: 1;
+
+  width: 100%;
+
+  min-width: 0;
+
+  height: 100%;
+
+  border: none;
+
+  outline: none;
+
+  padding: 0 14px;
+
+  color: #333333;
+
+  background: #ffffff;
+
+  font-size: 13px;
+}
+
+.nav-search input::placeholder {
+  color: #999999;
+}
+
+
+/* ========================================
+   SEARCH BUTTON
+======================================== */
+
+.nav-search button {
+  width: 48px;
+
+  min-width: 48px;
+
+  height: 100%;
+
+  border: none;
+
+  background: #d4af37;
+
+  color: #0c2b20;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 15px;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.nav-search button:hover {
+  background: #e5c45a;
+
+  color: #071d16;
+}
+
+
+/* ========================================
+   NAVBAR ACTIONS
+======================================== */
+
+.nav-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  flex-shrink: 0;
+}
+
+
+/* ========================================
+   NAVBAR ICONS
+======================================== */
+
+.nav-icon {
+  position: relative;
+
+  width: 34px;
+
+  height: 34px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 17px;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.nav-icon:hover {
+  color: #d4af37;
+
+  transform: translateY(-2px);
+}
+
+
+/* ========================================
+   BADGE
+======================================== */
+
+.badge {
+  position: absolute;
+
+  top: -5px;
+
+  right: -6px;
+
+  min-width: 17px;
+
+  height: 17px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 2px 4px;
+
+  background: #d4af37;
+
+  color: #0c2b20;
+
+  border-radius: 50%;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  border: 1px solid #0c2b20;
+}
+
+
+/* ========================================
+   MOBILE MENU BUTTON
+======================================== */
+
+.menu-button {
+  display: none;
+
+  width: 38px;
+
+  height: 38px;
+
+  flex-shrink: 0;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  border-radius: 6px;
+
+  background: transparent;
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  font-size: 18px;
+
+  align-items: center;
+
+  justify-content: center;
+
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+
+.menu-button:hover {
+  color: #d4af37;
+
+  border-color: #d4af37;
+
+  background: rgba(212, 175, 55, 0.08);
+}
+
+
+/* ========================================
+   MOBILE MENU
+======================================== */
+
+/*
+   Hidden by default.
+
+   It becomes visible only when
+   Navbar.jsx renders:
+
+   <div className="mobile-menu">
+*/
+
+.mobile-menu {
+  display: none;
+}
+
+
+/* ========================================
+   LARGE LAPTOP
+======================================== */
+
+@media (max-width: 1200px) {
+
+  .navbar-container {
+    width: 94%;
+
+    gap: 18px;
+  }
+
+  .logo img {
+    width: 200px;
+  }
+
+  .nav-links {
+    gap: 20px;
+  }
+
+  .nav-search {
+    max-width: 300px;
+  }
+
+  .nav-actions {
+    gap: 11px;
+  }
+}
+
+
+/* ========================================
+   TABLET / SMALL LAPTOP
+======================================== */
+
+@media (max-width: 1000px) {
+
+  .navbar-container {
+    gap: 14px;
+  }
+
+  .logo img {
+    width: 175px;
+  }
+
+  .nav-links {
+    gap: 14px;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+  }
+
+  .nav-search {
+    max-width: 250px;
+
+    min-width: 140px;
+  }
+
+  .nav-actions {
+    gap: 8px;
+  }
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 850px) {
+
+  .navbar {
+    height: 72px;
+  }
+
+  .navbar-container {
+    width: 94%;
+  }
+
+  .logo img {
+    width: 160px;
+  }
+
+
+  /* Hide desktop navigation */
+
+  .nav-links {
+    display: none;
+  }
+
+
+  /* Hide desktop search */
+
+  .nav-search {
+    display: none;
+  }
+
+
+  /* Actions */
+
+  .nav-actions {
+    margin-left: auto;
+
+    gap: 8px;
+  }
+
+
+  /* Show mobile button */
+
+  .menu-button {
+    display: flex;
+  }
+
+
+  /* ========================================
+     MOBILE DROPDOWN
+  ======================================== */
+
+  .mobile-menu {
+    display: flex;
+
+    position: absolute;
+
+    top: 100%;
+
+    left: 0;
+
+    width: 100%;
+
+    flex-direction: column;
+
+    padding: 18px 6%;
+
+    background: #0c2b20;
+
+    border-top:
+      1px solid rgba(212, 175, 55, 0.25);
+
+    border-bottom:
+      1px solid rgba(212, 175, 55, 0.25);
+
+    box-shadow:
+      0 12px 30px rgba(0, 0, 0, 0.35);
+
+    z-index: 9999;
+  }
+
+
+  /* ========================================
+     MOBILE LINKS
+  ======================================== */
+
+  .mobile-menu > a {
+    width: 100%;
+
+    min-height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 13px 8px;
+
+    color: #ffffff;
+
+    background: transparent;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    font-weight: 500;
+
+    border-bottom:
+      1px solid rgba(255, 255, 255, 0.08);
+
+    transition:
+      color 0.2s ease,
+      background 0.2s ease,
+      padding-left 0.2s ease;
+  }
+
+
+  .mobile-menu > a:hover {
+    color: #d4af37;
+
+    background:
+      rgba(212, 175, 55, 0.05);
+
+    padding-left: 14px;
+  }
+
+
+  /* ========================================
+     MOBILE BADGE
+  ======================================== */
+
+  .mobile-badge {
+    min-width: 23px;
+
+    height: 23px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 0 6px;
+
+    background: #d4af37;
+
+    color: #0c2b20;
+
+    border-radius: 50%;
+
+    font-size: 10px;
+
+    font-weight: 700;
+  }
+
+
+  /* ========================================
+     MOBILE SEARCH
+  ======================================== */
+
+  .mobile-search {
+    width: 100%;
+
+    height: 42px;
+
+    margin-top: 16px;
+
+    display: flex;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border-radius: 7px;
+
+    border:
+      1px solid rgba(212, 175, 55, 0.3);
+  }
+
+
+  .mobile-search input {
+    flex: 1;
+
+    width: 100%;
+
+    min-width: 0;
+
+    height: 100%;
+
+    padding: 0 12px;
+
+    border: none;
+
+    outline: none;
+
+    background: #ffffff;
+
+    color: #333333;
+
+    font-size: 13px;
+  }
+
+
+  .mobile-search input::placeholder {
+    color: #999999;
+  }
+
+
+  .mobile-search button {
+    width: 46px;
+
+    min-width: 46px;
+
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: none;
+
+    background: #d4af37;
+
+    color: #0c2b20;
+
+    cursor: pointer;
+
+    font-size: 14px;
+  }
+
+
+  .mobile-search button:hover {
+    background: #e5c45a;
+  }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+
+  .navbar {
+    width: 100%;
+
+    height: 68px;
+  }
+
+  .navbar-container {
+    width: 94%;
+
+    max-width: none;
+
+    gap: 6px;
+  }
+
+
+  /* Logo */
+
+  .logo {
+    flex: 1;
+
+    min-width: 0;
+  }
+
+  .logo img {
+    width: 145px;
+
+    max-width: 100%;
+
+    max-height: 52px;
+  }
+
+
+  /* Actions */
+
+  .nav-actions {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 6px;
+
+    margin-left: auto;
+
+    flex-shrink: 0;
+  }
+
+
+  /* Icons */
+
+  .nav-icon {
+    width: 31px;
+
+    height: 31px;
+
+    font-size: 15px;
+  }
+
+
+  /* Badge */
+
+  .badge {
+    top: -4px;
+
+    right: -4px;
+
+    min-width: 15px;
+
+    height: 15px;
+
+    padding: 2px 3px;
+
+    font-size: 8px;
+  }
+
+
+  /* Menu button */
+
+  .menu-button {
+    display: flex;
+
+    width: 33px;
+
+    height: 33px;
+
+    font-size: 16px;
+  }
+
+}
+
+
+/* ========================================
+   SMALL PHONES
+======================================== */
+
+@media (max-width: 500px) {
+
+  .navbar {
+    height: 64px;
+  }
+
+  .navbar-container {
+    width: 94%;
+
+    gap: 4px;
+  }
+
+  .logo img {
+    width: 130px;
+
+    max-height: 48px;
+  }
+
+  .nav-actions {
+    gap: 4px;
+  }
+
+  .nav-icon {
+    width: 29px;
+
+    height: 29px;
+
+    font-size: 14px;
+  }
+
+  .menu-button {
+    width: 31px;
+
+    height: 31px;
+
+    font-size: 15px;
+  }
+
+  .badge {
+    top: -4px;
+
+    right: -4px;
+
+    min-width: 14px;
+
+    height: 14px;
+
+    font-size: 8px;
+  }
+
+
+  /* Mobile dropdown */
+
+  .mobile-menu {
+    padding: 14px 6%;
+  }
+
+  .mobile-menu > a {
+    min-height: 46px;
+
+    padding: 12px 5px;
+
+    font-size: 14px;
+  }
+
+}
+
+
+/* ========================================
+   VERY SMALL PHONES
+======================================== */
+
+@media (max-width: 380px) {
+
+  .navbar {
+    height: 62px;
+  }
+
+  .navbar-container {
+    width: 96%;
+  }
+
+  .logo img {
+    width: 115px;
+  }
+
+  .nav-actions {
+    gap: 3px;
+  }
+
+  .nav-icon {
+    width: 27px;
+
+    height: 27px;
+
+    font-size: 13px;
+  }
+
+  .menu-button {
+    width: 29px;
+
+    height: 29px;
+
+    font-size: 14px;
+  }
+
+  .mobile-menu {
+    padding: 12px 5%;
+  }
+
+  .mobile-menu > a {
+    min-height: 44px;
+
+    font-size: 13px;
+  }
+
+}
+
+
+/* ========================================
+   EXTRA SMALL PHONES
+======================================== */
+
+@media (max-width: 330px) {
+
+  .navbar-container {
+    width: 97%;
+  }
+
+  .logo img {
+    width: 105px;
+  }
+
+  .nav-actions {
+    gap: 2px;
+  }
+
+  .nav-icon {
+    width: 25px;
+
+    height: 25px;
+
+    font-size: 12px;
+  }
+
+  .menu-button {
+    width: 27px;
+
+    height: 27px;
+
+    font-size: 13px;
+  }
+
+}

@@ -1,0 +1,839 @@
+/* ========================================
+   TRACKING PAGE
+======================================== */
+
+.tracking-page {
+  min-height: 100vh;
+  padding: 50px 6%;
+  background: #f7f6f1;
+}
+
+
+/* ========================================
+   TRACKING CONTAINER
+======================================== */
+
+.tracking-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+
+/* ========================================
+   BACK BUTTON
+======================================== */
+
+.tracking-back {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-bottom: 30px;
+  padding: 0;
+
+  border: none;
+  background: transparent;
+
+  color: #063f31;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.tracking-back:hover {
+  color: #c29b21;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.tracking-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  margin-bottom: 30px;
+}
+
+.tracking-label {
+  color: #c29b21;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+.tracking-header h1 {
+  margin: 8px 0;
+
+  color: #063f31;
+
+  font-size: 40px;
+}
+
+.tracking-header p {
+  margin: 0;
+
+  color: #6d7771;
+
+  font-size: 14px;
+}
+
+.tracking-order-id {
+  padding: 15px 20px;
+
+  background: #ffffff;
+
+  border: 1px solid #e4ebe7;
+
+  border-radius: 10px;
+
+  text-align: right;
+}
+
+.tracking-order-id span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #7d8781;
+
+  font-size: 11px;
+}
+
+.tracking-order-id strong {
+  color: #063f31;
+
+  font-size: 15px;
+}
+
+
+/* ========================================
+   TRACKING CARD
+======================================== */
+
+.tracking-card {
+  padding: 30px;
+
+  background: #ffffff;
+
+  border-radius: 16px;
+
+  box-shadow:
+    0 10px 35px rgba(6, 63, 49, 0.07);
+}
+
+
+/* ========================================
+   STATUS HEADER
+======================================== */
+
+.tracking-status-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding-bottom: 25px;
+
+  border-bottom: 1px solid #edf0ee;
+}
+
+.tracking-status-header h2 {
+  margin: 0 0 5px;
+
+  color: #063f31;
+
+  font-size: 20px;
+}
+
+.tracking-status-header p {
+  margin: 0;
+
+  color: #7b857f;
+
+  font-size: 13px;
+}
+
+
+/* ========================================
+   STATUS BADGE
+======================================== */
+
+.status-badge {
+  padding: 8px 15px;
+
+  border-radius: 30px;
+
+  background: #e9f8ef;
+
+  color: #168c45;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+
+/* ========================================
+   TIMELINE
+======================================== */
+
+.tracking-timeline {
+  position: relative;
+
+  padding: 30px 10px 10px;
+}
+
+.tracking-timeline::before {
+  content: "";
+
+  position: absolute;
+
+  left: 30px;
+
+  top: 40px;
+
+  bottom: 40px;
+
+  width: 2px;
+
+  background: #e2e9e5;
+}
+
+
+/* ========================================
+   TIMELINE ITEM
+======================================== */
+
+.timeline-item {
+  position: relative;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 20px;
+
+  min-height: 80px;
+}
+
+.timeline-icon {
+  position: relative;
+
+  z-index: 2;
+
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #f0f3f1;
+
+  color: #9aa39e;
+
+  font-size: 14px;
+}
+
+
+/* ========================================
+   COMPLETED
+======================================== */
+
+.timeline-item.completed .timeline-icon {
+  background: #063f31;
+
+  color: #f5c542;
+}
+
+
+/* ========================================
+   ACTIVE
+======================================== */
+
+.timeline-item.active .timeline-icon {
+  background: #f5c542;
+
+  color: #063f31;
+
+  box-shadow:
+    0 0 0 6px #fff8df;
+}
+
+
+/* ========================================
+   TIMELINE CONTENT
+======================================== */
+
+.timeline-content {
+  padding-top: 3px;
+}
+
+.timeline-content h3 {
+  margin: 0 0 5px;
+
+  color: #063f31;
+
+  font-size: 15px;
+}
+
+.timeline-content p {
+  margin: 0;
+
+  color: #858e89;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+
+/* ========================================
+   TRACKING DETAILS
+======================================== */
+
+.tracking-details {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 20px;
+
+  margin-top: 20px;
+}
+
+.tracking-detail-card {
+  padding: 25px;
+
+  background: #ffffff;
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 5px 20px rgba(6, 63, 49, 0.05);
+}
+
+.tracking-detail-card h2 {
+  margin: 0 0 20px;
+
+  color: #063f31;
+
+  font-size: 18px;
+}
+
+
+/* ========================================
+   DETAIL ROW
+======================================== */
+
+.detail-row {
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 12px 0;
+
+  border-bottom: 1px solid #edf0ee;
+
+  font-size: 13px;
+}
+
+.detail-row span {
+  color: #7d8781;
+}
+
+.detail-row strong {
+  color: #063f31;
+
+  text-align: right;
+
+  max-width: 60%;
+}
+
+
+/* ========================================
+   PAYMENT STATUS
+======================================== */
+
+.payment-paid {
+  color: #168c45 !important;
+}
+
+.payment-pending {
+  color: #c29b21 !important;
+}
+
+
+/* ========================================
+   TRACKING TOTAL
+======================================== */
+
+.tracking-total {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding-top: 18px;
+
+  margin-top: 5px;
+
+  font-size: 19px;
+
+  font-weight: 700;
+}
+
+.tracking-total span {
+  color: #063f31;
+}
+
+.tracking-total strong {
+  color: #c29b21;
+}
+
+
+/* ========================================
+   ESTIMATED DELIVERY
+======================================== */
+
+.estimated-delivery {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin-top: 20px;
+
+  padding: 18px 20px;
+
+  background: #f0faf4;
+
+  border: 1px solid #dcefe3;
+
+  border-radius: 12px;
+
+  color: #063f31;
+}
+
+.estimated-delivery > svg {
+  width: 42px;
+  height: 42px;
+
+  padding: 10px;
+
+  box-sizing: border-box;
+
+  border-radius: 50%;
+
+  background: #063f31;
+
+  color: #f5c542;
+}
+
+.estimated-delivery strong {
+  display: block;
+
+  margin-bottom: 4px;
+
+  font-size: 14px;
+}
+
+.estimated-delivery p {
+  margin: 0;
+
+  color: #718078;
+
+  font-size: 12px;
+}
+
+
+/* ========================================
+   ORDER DATE
+======================================== */
+
+.order-date-info {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 15px;
+
+  padding: 14px 18px;
+
+  background: #ffffff;
+
+  border: 1px solid #e4ebe7;
+
+  border-radius: 10px;
+
+  color: #063f31;
+
+  font-size: 13px;
+}
+
+.order-date-info svg {
+  color: #c29b21;
+}
+
+
+/* ========================================
+   PAYMENT INFO CARD
+======================================== */
+
+.payment-info-card {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  margin-top: 15px;
+
+  padding: 16px 18px;
+
+  background: #ffffff;
+
+  border: 1px solid #e4ebe7;
+
+  border-radius: 10px;
+}
+
+.payment-info-icon {
+  width: 40px;
+  height: 40px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #eaf5ef;
+
+  color: #063f31;
+}
+
+.payment-info-card > div:nth-child(2) {
+  flex: 1;
+}
+
+.payment-info-card strong {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #063f31;
+
+  font-size: 13px;
+}
+
+.payment-info-card p {
+  margin: 0;
+
+  color: #7b857f;
+
+  font-size: 12px;
+}
+
+.payment-status {
+  padding: 6px 10px;
+
+  border-radius: 20px;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+.payment-status.paid {
+  background: #e9f8ef;
+
+  color: #168c45;
+}
+
+.payment-status.pending {
+  background: #fff8df;
+
+  color: #a47d00;
+}
+
+
+/* ========================================
+   CONTINUE SHOPPING
+======================================== */
+
+.continue-shopping-btn {
+  width: 100%;
+
+  margin-top: 20px;
+
+  padding: 15px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #063f31;
+
+  color: #ffffff;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.continue-shopping-btn:hover {
+  background: #095541;
+
+  transform: translateY(-1px);
+}
+
+
+/* ========================================
+   EMPTY ORDER
+======================================== */
+
+.tracking-empty {
+  min-height: 70vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+}
+
+.tracking-empty-icon {
+  width: 75px;
+  height: 75px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 20px;
+
+  border-radius: 50%;
+
+  background: #eaf5ef;
+
+  color: #063f31;
+
+  font-size: 30px;
+}
+
+.tracking-empty h1 {
+  margin: 0 0 10px;
+
+  color: #063f31;
+
+  font-size: 30px;
+}
+
+.tracking-empty p {
+  margin: 0;
+
+  color: #777;
+
+  font-size: 14px;
+}
+
+.tracking-empty button {
+  margin-top: 20px;
+
+  padding: 13px 25px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #f5c542;
+
+  color: #063f31;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.tracking-empty button:hover {
+  background: #e5b52f;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 700px) {
+
+  .tracking-page {
+    padding: 35px 15px;
+  }
+
+  .tracking-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .tracking-header h1 {
+    font-size: 32px;
+  }
+
+  .tracking-order-id {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    text-align: left;
+  }
+
+  .tracking-details {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 500px) {
+
+  .tracking-page {
+    padding: 25px 12px;
+  }
+
+  .tracking-card {
+    padding: 20px 15px;
+  }
+
+  .tracking-status-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .tracking-timeline {
+    padding-left: 0;
+  }
+
+  .tracking-timeline::before {
+    left: 20px;
+  }
+
+  .timeline-item {
+    gap: 15px;
+  }
+
+  .timeline-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .tracking-detail-card {
+    padding: 20px 15px;
+  }
+
+  .detail-row {
+    gap: 10px;
+  }
+
+  .detail-row strong {
+    max-width: 60%;
+  }
+
+  .payment-info-card {
+    align-items: flex-start;
+  }
+
+}
+
+
+/* ========================================
+   VERY SMALL PHONES
+======================================== */
+
+@media (max-width: 380px) {
+
+  .tracking-header h1 {
+    font-size: 27px;
+  }
+
+  .tracking-card {
+    padding: 18px 12px;
+  }
+
+  .timeline-content h3 {
+    font-size: 14px;
+  }
+
+  .timeline-content p {
+    font-size: 11px;
+  }
+
+  .detail-row {
+    flex-direction: column;
+
+    gap: 4px;
+  }
+
+  .detail-row strong {
+    max-width: 100%;
+
+    text-align: left;
+  }
+
+  .payment-info-card {
+    flex-wrap: wrap;
+  }
+
+  .payment-status {
+    margin-left: 54px;
+  }
+
+}

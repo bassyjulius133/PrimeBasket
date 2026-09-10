@@ -1,0 +1,399 @@
+/* =========================================================
+   PRIMEBASKET - PRODUCT CARD
+   Matches class names used in ProductCard.jsx
+   ========================================================= */
+
+.product-card {
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 16px;
+  overflow: hidden;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  cursor: pointer;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.13);
+}
+
+
+/* =========================================================
+   PRODUCT IMAGE (this is the <div className="product-image">)
+   ========================================================= */
+
+.product-image {
+  position: relative;
+
+  width: 100%;
+  height: 295px;
+
+  background: #f7f7f4;
+
+  overflow: hidden;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  display: block;
+
+  transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.04);
+}
+
+
+/* =========================================================
+   WISHLIST BUTTON
+   ========================================================= */
+
+.wishlist-button {
+  position: absolute;
+
+  top: 16px;
+  right: 16px;
+
+  width: 46px;
+  height: 46px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #ffffff;
+  color: #0b3d2e;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+
+  z-index: 10;
+
+  transition: all 0.25s ease;
+}
+
+.wishlist-button:hover {
+  transform: scale(1.1);
+  color: #e63946;
+}
+
+.wishlist-button.wishlist-active {
+  color: #e63946;
+}
+
+
+/* =========================================================
+   CATEGORY BADGE (sits over the image, top-left, per current markup)
+   ========================================================= */
+
+.image-category {
+  position: absolute;
+
+  top: 15px;
+  left: 15px;
+
+  padding: 6px 10px;
+
+  background: #f5c542;
+  color: #073b2a;
+
+  border-radius: 6px;
+
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+
+  z-index: 5;
+}
+
+
+/* =========================================================
+   PRODUCT INFORMATION
+   ========================================================= */
+
+.product-info {
+  background: #ffffff;
+
+  padding: 20px 24px 22px;
+
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* =========================================================
+   RATING
+   ========================================================= */
+
+.product-rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  margin: 0 0 10px;
+
+  color: #f5c542;
+  font-size: 14px;
+}
+
+.product-rating span {
+  color: #65716c;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.product-rating .rating-text {
+  margin-left: 2px;
+}
+
+
+/* =========================================================
+   PRODUCT NAME
+   ========================================================= */
+
+.product-info h3 {
+  margin: 0 0 12px;
+  padding: 0;
+
+  color: #073b2a;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.3;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.product-description {
+  margin: 0 0 18px;
+
+  color: #66736d;
+
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.55;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   BOTTOM ROW: price + add to cart
+   ========================================================= */
+
+.product-bottom {
+  margin-top: auto;
+  padding-top: 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.price-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.price-label {
+  color: #b28700;
+
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+
+.product-price {
+  margin: 0;
+  padding: 0;
+
+  color: #073b2a;
+
+  font-family: Arial, sans-serif;
+  font-size: 21px;
+  font-weight: 800;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   ADD TO CART BUTTON
+   ========================================================= */
+
+.add-to-cart {
+  width: auto;
+  min-width: 125px;
+  height: 44px;
+
+  padding: 0 16px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #0b3d2e;
+  color: #ffffff;
+
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  transition: all 0.25s ease;
+
+  box-shadow: 0 4px 12px rgba(11, 61, 46, 0.18);
+}
+
+.add-to-cart:hover {
+  background: #145b45;
+  transform: translateY(-2px);
+  box-shadow: 0 7px 18px rgba(11, 61, 46, 0.25);
+}
+
+.add-to-cart svg {
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  .product-image {
+    height: 240px;
+  }
+
+  .product-info {
+    padding: 17px;
+  }
+
+  .product-info h3 {
+    font-size: 18px;
+  }
+
+  .product-description {
+    font-size: 13px;
+  }
+
+  .product-price {
+    font-size: 18px;
+  }
+
+  .add-to-cart {
+    min-width: 105px;
+    height: 40px;
+    padding: 0 12px;
+    font-size: 12px;
+  }
+
+  .wishlist-button {
+    width: 40px;
+    height: 40px;
+    top: 12px;
+    right: 12px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .product-card {
+    border-radius: 13px;
+  }
+
+  .product-image {
+    height: 200px;
+  }
+
+  .product-info {
+    padding: 15px;
+  }
+
+  .image-category {
+    font-size: 10px;
+    padding: 5px 8px;
+  }
+
+  .product-info h3 {
+    font-size: 16px;
+  }
+
+  .product-description {
+    font-size: 12px;
+  }
+
+  .product-price {
+    font-size: 16px;
+  }
+
+  .product-bottom {
+    gap: 8px;
+  }
+
+  .add-to-cart {
+    min-width: 95px;
+    height: 38px;
+    padding: 0 10px;
+    font-size: 11px;
+  }
+
+  .wishlist-button {
+    width: 36px;
+    height: 36px;
+    font-size: 15px;
+  }
+}
