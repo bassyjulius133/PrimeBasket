@@ -66,6 +66,7 @@ const Products = () => {
 
     const loadImages = async () => {
 
+      // Start loading
       dispatch({
         type: "LOADING",
       });
@@ -80,12 +81,64 @@ const Products = () => {
 
               const image = new Image();
 
+              let finished = false;
+
+
+              // ----------------------------------------
+              // FINISH IMAGE LOADING
+              // ----------------------------------------
+
+              const finishLoading = () => {
+
+                if (finished) {
+                  return;
+                }
+
+                finished = true;
+
+                resolve();
+
+              };
+
+
+              // ----------------------------------------
+              // IMAGE LOADED SUCCESSFULLY
+              // ----------------------------------------
+
+              image.onload = () => {
+
+                finishLoading();
+
+              };
+
+
+              // ----------------------------------------
+              // IMAGE FAILED
+              // ----------------------------------------
+
+              image.onerror = () => {
+
+                finishLoading();
+
+              };
+
+
+              // ----------------------------------------
+              // START IMAGE LOADING
+              // ----------------------------------------
+
               image.src = product.image;
 
-              image.onload = resolve;
 
-              // If image fails, continue loading
-              image.onerror = resolve;
+              // ----------------------------------------
+              // TIMEOUT
+              // ----------------------------------------
+
+              setTimeout(() => {
+
+                finishLoading();
+
+              }, 5000);
 
             });
 
@@ -93,10 +146,18 @@ const Products = () => {
         );
 
 
+        // ----------------------------------------
+        // WAIT FOR ALL IMAGES
+        // ----------------------------------------
+
         await Promise.allSettled(
           imagePromises
         );
 
+
+        // ----------------------------------------
+        // PRODUCT LOADING SUCCESS
+        // ----------------------------------------
 
         dispatch({
           type: "SUCCESS",
@@ -104,6 +165,12 @@ const Products = () => {
 
 
       } catch (error) {
+
+        console.error(
+          "Error loading product images:",
+          error
+        );
+
 
         dispatch({
           type: "ERROR",
@@ -127,6 +194,7 @@ const Products = () => {
 
     const searchFromUrl =
       searchParams.get("search") || "";
+
 
     const categoryFromUrl =
       searchParams.get("category") || "All";
@@ -338,6 +406,7 @@ const Products = () => {
         // ----------------------------------------
 
         case "featured":
+
           return 0;
 
 
@@ -346,6 +415,7 @@ const Products = () => {
         // ----------------------------------------
 
         case "price-low":
+
           return a.price - b.price;
 
 
@@ -354,6 +424,7 @@ const Products = () => {
         // ----------------------------------------
 
         case "price-high":
+
           return b.price - a.price;
 
 
@@ -362,6 +433,7 @@ const Products = () => {
         // ----------------------------------------
 
         case "name":
+
           return a.name.localeCompare(b.name);
 
 
@@ -370,6 +442,7 @@ const Products = () => {
         // ----------------------------------------
 
         default:
+
           return 0;
 
       }
@@ -532,7 +605,9 @@ const Products = () => {
                 onClick={clearSearch}
                 className="clear-search"
               >
+
                 ✕ Clear Search
+
               </button>
 
             )}

@@ -68,8 +68,10 @@ const Hero = () => {
           <div className="hero-image-card">
 
             <img
-              src="https://images.unsplash.com/photo-1542838132-92c53300491e"
+              src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=80"
               alt="Fresh groceries"
+              loading="eager"
+              decoding="async"
             />
 
           </div>

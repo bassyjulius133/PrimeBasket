@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { FaShoppingCart, FaHeart, FaStar } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
@@ -22,8 +23,17 @@ const ProductCard = ({ product }) => {
 
 
   // ========================================
-  // PRODUCT DETAILS
+  // IMAGE LOADING STATE
+  // ========================================
 
+  const [imageLoading, setImageLoading] = useState(true);
+
+  const [imageError, setImageError] = useState(false);
+
+
+  // ========================================
+  // PRODUCT DETAILS
+  // ========================================
 
   const handleProductClick = () => {
 
@@ -42,7 +52,9 @@ const ProductCard = ({ product }) => {
 
     addToCart(product);
 
-    toast.success(`${product.name} added to cart!`);
+    toast.success(
+      `${product.name} added to cart!`
+    );
 
   };
 
@@ -76,6 +88,30 @@ const ProductCard = ({ product }) => {
   };
 
 
+  // ========================================
+  // IMAGE LOADED
+  // ========================================
+
+  const handleImageLoad = () => {
+
+    setImageLoading(false);
+
+  };
+
+
+  // ========================================
+  // IMAGE ERROR
+  // ========================================
+
+  const handleImageError = () => {
+
+    setImageLoading(false);
+
+    setImageError(true);
+
+  };
+
+
   return (
 
     <article
@@ -90,10 +126,48 @@ const ProductCard = ({ product }) => {
 
       <div className="product-image">
 
-        <img
-          src={product.image}
-          alt={product.name}
-        />
+
+        {/* IMAGE LOADING PLACEHOLDER */}
+
+        {imageLoading && (
+
+          <div className="image-loading">
+
+            <div className="image-spinner"></div>
+
+          </div>
+
+        )}
+
+
+        {/* PRODUCT IMAGE */}
+
+        {!imageError ? (
+
+          <img
+            src={product.image}
+            alt={product.name}
+            loading="lazy"
+            decoding="async"
+            onLoad={handleImageLoad}
+            onError={handleImageError}
+          />
+
+        ) : (
+
+          /* IMAGE ERROR FALLBACK */
+
+          <div className="image-error">
+
+            🛒
+
+            <span>
+              Image unavailable
+            </span>
+
+          </div>
+
+        )}
 
 
         {/* WISHLIST */}
@@ -121,7 +195,9 @@ const ProductCard = ({ product }) => {
         {/* CATEGORY BADGE */}
 
         <span className="image-category">
+
           {product.category}
+
         </span>
 
       </div>
@@ -162,7 +238,9 @@ const ProductCard = ({ product }) => {
         {/* DESCRIPTION */}
 
         <p className="product-description">
+
           {product.description}
+
         </p>
 
 
@@ -182,7 +260,9 @@ const ProductCard = ({ product }) => {
             </span>
 
             <span className="product-price">
+
               ₦{product.price.toLocaleString()}
+
             </span>
 
           </div>
